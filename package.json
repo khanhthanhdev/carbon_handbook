@@ -1,0 +1,20 @@
+{
+  "name": "carbon-docus",
+  "description": "Comprehensive carbon credit documentation for Vietnamese SMEs",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev --extends docus",
+    "build": "nuxt build --extends docus",
+    "generate": "nuxt generate --extends docus",
+    "preview": "nuxt preview --extends docus"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "0.14.0",
+    "@nuxt/hints": "1.0.0-alpha.10",
+    "@nuxtjs/i18n": "^10.2.1",
+    "@nuxtjs/seo": "3.4.0",
+    "better-sqlite3": "^12.6.2",
+    "docus": "latest",
+    "nuxt": "^4.3.1"
+  }
+}
