@@ -36,9 +36,23 @@ loadLocalEnv('.env.local')
 const siteUrl = process.env.NUXT_SITE_URL
 
 export default defineNuxtConfig({
+  extends: ['docus'],
   site: {
     name: 'Carbon Credits Guide',
     ...(siteUrl ? { url: siteUrl } : {}),
+  },
+  fonts: {
+    defaults: {
+      subsets: ['latin', 'vietnamese'],
+      styles: ['normal'],
+      weights: [400, 500, 600, 700, 800],
+    },
+    families: [
+      {
+        name: 'Manrope',
+        provider: 'google',
+      },
+    ],
   },
   icon: {
     provider: 'server',

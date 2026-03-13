@@ -1,112 +1,145 @@
 ---
 seo:
   title: Sổ tay Tín chỉ Carbon cho Doanh nghiệp SME Việt Nam
-  description: Tài liệu hướng dẫn toàn diện về tín chỉ carbon — từ khái niệm, văn bản pháp luật đến tính toán phát thải, triển khai dự án và kinh nghiệm quốc tế dành cho doanh nghiệp vừa và nhỏ tại Việt Nam.
+  description: Sổ tay thị trường carbon dành cho doanh nghiệp SME Việt Nam, bao quát khung pháp lý, đo lường phát thải, dự án giảm phát thải, tài chính, quản trị và kinh nghiệm quốc tế.
 ---
 
-<section class="handbook-hero">
-  <div class="handbook-hero__content">
-    <p class="handbook-hero__eyebrow">Sổ tay Thị trường Carbon</p>
-    <h1 class="handbook-hero__title">Sổ tay Tín chỉ Carbon cho Doanh nghiệp SME Việt Nam</h1>
-    <p class="handbook-hero__lead">
-      Website này được dùng để giới thiệu và trình bày sổ tay thị trường carbon, tập hợp những kiến thức cốt lõi giúp doanh nghiệp SME hiểu tín chỉ carbon và chuẩn bị tham gia thị trường.
-    </p>
-    <p class="handbook-hero__body">
-      Từ khái niệm, khung pháp lý, tính toán phát thải đến triển khai dự án, tài chính, quản trị rủi ro và kinh nghiệm quốc tế, toàn bộ nội dung được sắp xếp như một cẩm nang thực hành dành cho bối cảnh Việt Nam.
-    </p>
-    <div class="handbook-hero__actions">
-      <a class="handbook-hero__button handbook-hero__button--primary" href="/vi/part-1-concepts-and-legal-documents-related-to-carbon-credits/what-is-a-carbon-credit">
-        Bắt đầu
-      </a>
-      <a class="handbook-hero__button handbook-hero__button--secondary" href="/en">
-        English
-      </a>
-    </div>
-  </div>
+::landing-hero
+---
+eyebrow: Sổ tay Thị trường Carbon
+title: Sổ tay Tín chỉ Carbon cho Doanh nghiệp SME Việt Nam
+lead: >-
+  Một sổ tay được xây dựng để giúp doanh nghiệp SME Việt Nam hiểu tín chỉ carbon,
+  khung pháp lý và các bước thực hành cần thiết để chuẩn bị tham gia thị trường.
+body: >-
+  Từ nền tảng khái niệm đến triển khai thực tế, nội dung được sắp xếp theo lộ trình rõ ràng
+  về kiểm kê phát thải, MRV, phát triển dự án, tài chính, quản trị và kinh nghiệm quốc tế.
+primaryLabel: Mở sổ tay
+primaryTo: /vi/part-1-concepts-and-legal-documents-related-to-carbon-credits/acknowledge
+secondaryLabel: English
+secondaryTo: /en
+guideLabel: Phạm vi nội dung
+guideDescription: >-
+  Sáu phần nội dung liên kết chặt chẽ, bao phủ chính sách, đo lường, triển khai dự án,
+  tài chính, quản trị và bài học quốc tế cho doanh nghiệp SME.
+statLabel: Cấu trúc biên soạn
+statValue: 6 phần sổ tay
+statDescription: >-
+  Được tổ chức như một lộ trình thực hành, từ nền tảng thị trường đến mức độ sẵn sàng triển khai.
+imageAlt: Bìa sổ tay tín chỉ carbon
+---
+::
 
-  <div class="handbook-hero__media">
-    <img
-      class="handbook-hero__image"
-      src="/cover_vi.webp"
-      alt="Bìa sổ tay tín chỉ carbon"
-    >
-  </div>
-</section>
+::landing-trust-strip
+---
+label: Được thực hiện cùng
+items:
+  - icon: i-lucide-building-2
+    name: VinUniversity
+    description: Chủ trì học thuật và điều phối biên tập
+  - icon: i-lucide-globe-2
+    name: British Council
+    description: Đồng hành quốc tế và hỗ trợ thể chế
+  - icon: i-lucide-notebook-tabs
+    name: Nhóm biên tập liên ngành
+    description: Kết nối góc nhìn chính sách, tài chính, quản trị và triển khai
+---
+::
 
-::u-page-section
-#title
-Nội dung chính
+::landing-parts-grid
+---
+eyebrow: Nội dung chính
+title: Toàn cảnh cấu trúc của sổ tay
+description: >-
+  Xem nhanh sáu phần nội dung trọng tâm trước khi đi vào từng câu hỏi chi tiết.
+items:
+  - icon: i-lucide-book-open
+    label: Phần 1
+    title: Khái niệm và văn bản pháp luật
+    description: Nắm được các khái niệm cốt lõi về thị trường carbon và các văn bản pháp lý liên quan tại Việt Nam.
+    to: /vi/part-1-concepts-and-legal-documents-related-to-carbon-credits/what-is-a-carbon-credit
+  - icon: i-lucide-calculator
+    label: Phần 2
+    title: Tính toán phát thải và lộ trình dự án
+    description: Hướng dẫn doanh nghiệp tính phát thải, chuẩn bị MRV và hình thành dự án giảm phát thải phù hợp.
+    to: /vi/part-2-from-emission-calculation-to-implementation-of-emission-reduction-projects/how-does-an-sme-calculate-its-total-greenhouse-gas-emissions-carbon-footprint
+  - icon: i-lucide-banknote
+    label: Phần 3
+    title: Tài chính và lợi ích kinh tế
+    description: Tổng hợp cơ chế tài chính, định giá và các cân nhắc kinh tế khi tham gia thị trường carbon.
+    to: /vi/part-3-finance-and-economic-benefits-from-carbon-credits/what-price-usd-credit-can-sme-enterprises-expect-for-selling-carbon-credits
+  - icon: i-lucide-briefcase-business
+    label: Phần 4
+    title: Công cụ, đào tạo và hỗ trợ kỹ thuật
+    description: Chỉ ra các công cụ, tổ chức và hình thức hỗ trợ giúp SME xây dựng năng lực nội bộ.
+    to: /vi/part-4-tools-training-and-technical-support-for-smes/where-can-businesses-find-guidance-documents-and-forms-ministry-of-agriculture-and-environment-c
+  - icon: i-lucide-shield-check
+    label: Phần 5
+    title: Rủi ro, quản trị và minh bạch
+    description: Hệ thống hóa các thực hành về độ tin cậy, công bố thông tin và quản trị nhằm giảm rủi ro triển khai.
+    to: /vi/part-5-risk-governance-transparency-and-good-practices/how-to-avoid-greenwashing-and-ensure-project-credibility
+  - icon: i-lucide-earth
+    label: Phần 6
+    title: Kinh nghiệm quốc tế
+    description: Tham khảo cách các doanh nghiệp và thị trường tương đồng trên thế giới tiếp cận lộ trình sẵn sàng.
+    to: /vi/part-6-international-experience/globally-what-models-or-strategies-have-small-and-medium-manufacturing-enterprises-in-the-steel
+---
+::
 
-#features
-  :::u-page-feature
-  ---
-  icon: i-lucide-book-open
-  to: /vi/part-1-concepts-and-legal-documents-related-to-carbon-credits
-  ---
-  #title
-  Khái niệm & Văn bản pháp luật
+::landing-readiness
+---
+eyebrow: Mức độ sẵn sàng của SME
+title: Biến nội dung thành năng lực hành động
+description: >-
+  Sổ tay được thiết kế để giúp doanh nghiệp chuyển từ mức độ nhận biết sang chuẩn bị có cấu trúc.
+items:
+  - title: Hiểu rõ khái niệm, chính sách và thiết kế thị trường carbon
+    description: Xây dựng nền tảng thực hành về tín chỉ carbon, ETS, tiêu chuẩn và bối cảnh chính sách tác động đến doanh nghiệp Việt Nam.
+  - title: Chuẩn bị cho đo lường, MRV và quyết định phát triển dự án
+    description: Dùng sổ tay để định hình kiểm kê phát thải, đường cơ sở, hồ sơ minh chứng và các bước chuẩn bị dự án phù hợp.
+  - title: Đánh giá tài chính, quản trị và các kênh tham gia thị trường
+    description: So sánh phương án tài chính, yêu cầu công bố và rủi ro vận hành trước khi phân bổ nguồn lực cho việc tham gia thị trường.
+---
+::
 
-  #description
-  Tìm hiểu tín chỉ carbon là gì, cơ chế hoạt động và khung pháp lý của Việt Nam về thị trường carbon.
-  :::
+::landing-about-preview
+---
+eyebrow: Đằng sau cuốn sách
+title: Ba tác giả chính thực hiện sổ tay
+description: >-
+  Sổ tay Tín chỉ Carbon được dẫn dắt bởi nhóm biên tập nòng cốt, kết nối kinh tế,
+  chính sách công và nghiên cứu phục vụ triển khai cho doanh nghiệp SME Việt Nam.
+primaryLabel: Xem đội ngũ thực hiện
+primaryTo: /vi/about-us
+supportTitle: Hỗ trợ thể chế
+supportDescription: >-
+  Dự án được đồng hành bởi các tổ chức đóng góp vai trò học thuật và hợp tác quốc tế.
+people:
+  - image: /duy_anh.webp
+    name: TS. Lê Duy Anh
+    role: Giám đốc chương trình, Giảng viên Kinh tế học
+    organization: VinUniversity
+  - image: /truong_thu_ha.webp
+    name: TS. Trương Thu Hà
+    role: Giảng viên Bộ môn Chính sách công
+    organization: Trường Đại học Kinh tế, Đại học Quốc gia Hà Nội
+  - image: /vu_anh_dung.webp
+    name: PGS.TS Vũ Anh Dũng
+    role: Viện trưởng sáng lập Viện Khoa học và Giáo dục Khai phóng
+    organization: VinUniversity
+institutions:
+  - image: /british-council.webp
+    name: British Council
+  - image: /vin_uni.webp
+    name: VinUniversity
+---
+::
 
-  :::u-page-feature
-  ---
-  icon: i-lucide-calculator
-  to: /vi/part-2-from-emission-calculation-to-implementation-of-emission-reduction-projects
-  ---
-  #title
-  Tính toán phát thải & Dự án
-
-  #description
-  Hướng dẫn tính toán khí nhà kính và triển khai dự án giảm phát thải từng bước.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-banknote
-  to: /vi/part-3-finance-and-economic-benefits-from-carbon-credits
-  ---
-  #title
-  Tài chính & Lợi ích kinh tế
-
-  #description
-  Khám phá cơ chế tài chính, lợi ích kinh tế và cơ hội doanh thu từ tham gia thị trường tín chỉ carbon.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-wrench
-  to: /vi/part-4-tools-training-and-technical-support-for-smes
-  ---
-  #title
-  Công cụ & Đào tạo cho SME
-
-  #description
-  Tiếp cận công cụ, chương trình đào tạo và hỗ trợ kỹ thuật thiết kế riêng cho doanh nghiệp vừa và nhỏ.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-shield-check
-  to: /vi/part-5-risk-governance-transparency-and-good-practices
-  ---
-  #title
-  Quản trị rủi ro & Minh bạch
-
-  #description
-  Thực hành tốt về quản trị rủi ro, quản trị doanh nghiệp và minh bạch trong hoạt động tín chỉ carbon.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-globe
-  to: /vi/part-6-international-experience
-  ---
-  #title
-  Kinh nghiệm quốc tế
-
-  #description
-  Học hỏi từ các nghiên cứu điển hình và thực tiễn tốt nhất từ thị trường carbon trên thế giới.
-  :::
+::landing-contact
+---
+eyebrow: Liên hệ
+title: Thông tin liên hệ
+email: anh.ld@vinuni.edu.vn
+address: VinUniversity, Ocean Park, Gia Lâm, Hà Nội
+---
 ::

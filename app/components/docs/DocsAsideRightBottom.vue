@@ -13,7 +13,7 @@ const explainPromptMessages: Record<string, string> = {
 
 function getExplainPrompt(url: string) {
   const template = explainPromptMessages[locale.value] || explainPromptMessages.en
-  return template.replace('{url}', url)
+  return template!.replace('{url}', url)
 }
 
 const showExplainWithAi = computed(() => {

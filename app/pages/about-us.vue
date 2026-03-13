@@ -2,7 +2,7 @@
 import type { Collections } from '@nuxt/content'
 
 definePageMeta({
-  layout: 'default',
+  layout: false,
 })
 
 type DocsCollectionName = Extract<keyof Collections, `docs_${string}`>
@@ -16,9 +16,10 @@ const docsCollections = {
 } as const satisfies Record<string, DocsCollectionName>
 
 const collectionName = computed<DocsCollectionName>(() => {
-  const currentLocale = locale.value
+  const pathLocale = route.path.split('/')[1] ?? ''
+  const currentLocale = pathLocale in docsCollections ? pathLocale : locale.value
 
-  return currentLocale in docsCollections
+  return (currentLocale in docsCollections)
     ? docsCollections[currentLocale as keyof typeof docsCollections]
     : docsCollections.en
 })

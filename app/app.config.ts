@@ -10,6 +10,43 @@ export default defineAppConfig({
   sitemap: {
     enabled: true,
   },
+  marketing: {
+    headerSolidOffset: 24,
+    handbookPaths: {
+      en: '/en/part-1-concepts-and-legal-documents-related-to-carbon-credits/acknowledge',
+      vi: '/vi/part-1-concepts-and-legal-documents-related-to-carbon-credits/acknowledge',
+    },
+    labels: {
+      handbook: {
+        en: 'Handbook',
+        vi: 'Sổ tay',
+      },
+      whatsInside: {
+        en: "What's Inside",
+        vi: 'Nội dung',
+      },
+      about: {
+        en: 'About Us',
+        vi: 'Về Chúng Tôi',
+      },
+      openHandbook: {
+        en: 'Open the handbook',
+        vi: 'Mở sổ tay',
+      },
+      exploreHandbook: {
+        en: 'Explore the handbook',
+        vi: 'Khám phá sổ tay',
+      },
+      switchLocale: {
+        en: 'Tiếng Việt',
+        vi: 'English',
+      },
+      footerNote: {
+        en: 'Carbon market handbook for Vietnamese SMEs',
+        vi: 'Sổ tay thị trường carbon cho doanh nghiệp SME Việt Nam',
+      },
+    },
+  },
   ui: {
     colors: {
       primary: "green",
