@@ -533,5 +533,124 @@ const alternateLocalePath = computed(() => {
   .about-hero-actions > * {
     width: 100%;
   }
+
+  /* Page padding adjustment */
+  .about-page {
+    padding: 4rem 0 2.5rem;
+  }
+
+  /* Editors grid - single column on mobile */
+  .about-editors-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .about-editor-link {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    padding: 0.9rem;
+  }
+
+  .about-editor-avatar {
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .about-editor-card .marketing-card__title {
+    font-size: 0.95rem;
+  }
+
+  .about-editor-card .marketing-card__description {
+    font-size: 0.85rem;
+  }
+
+  /* Focus areas grid - single column on mobile */
+  .about-focus-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .about-focus-card {
+    padding: 1rem;
+  }
+
+  .about-focus-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.1rem;
+  }
+
+  .about-focus-card .marketing-card__title {
+    font-size: 1rem;
+  }
+
+  /* Partners grid - single column on mobile */
+  .about-partners-grid-new {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-partner-card-new__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .about-partner-card-new__name {
+    font-size: 1rem;
+  }
+
+  /* Leadership/people section */
+  .marketing-preview__people {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .marketing-card--person {
+    padding: 0;
+  }
+
+  .marketing-person__body {
+    padding: 0.9rem;
+  }
+
+  /* Hero meta cards */
+  .about-hero-meta__row {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-meta__card {
+    padding: 0.9rem;
+  }
+
+  .about-hero-meta__label {
+    font-size: 0.68rem;
+  }
+
+  .about-hero-meta__text,
+  .about-hero-meta__list {
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablet responsive */
+@media (min-width: 640px) and (max-width: 959px) {
+  .about-editors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-partners-grid-new {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .marketing-preview__people {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>

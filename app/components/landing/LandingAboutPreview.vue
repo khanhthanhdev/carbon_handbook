@@ -112,3 +112,59 @@ defineProps<{
     </div>
   </LandingSection>
 </template>
+
+<style scoped>
+/* Mobile responsive for About Preview */
+@media (max-width: 767px) {
+  .marketing-preview {
+    gap: 1.25rem;
+  }
+
+  .marketing-preview__people {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .marketing-card--person {
+    max-width: 100%;
+  }
+
+  .marketing-preview__action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .marketing-preview__support {
+    padding: 1rem;
+  }
+
+  .marketing-preview__support-title {
+    font-size: 1.25rem;
+    white-space: normal;
+  }
+
+  .marketing-preview__support-description {
+    white-space: normal;
+  }
+
+  .marketing-preview__institutions {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .marketing-card--institution {
+    width: 100%;
+  }
+}
+
+/* Tablet responsive */
+@media (min-width: 768px) and (max-width: 959px) {
+  .marketing-preview__people {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .marketing-preview__institutions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>

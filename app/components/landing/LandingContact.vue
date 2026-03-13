@@ -71,4 +71,26 @@ defineProps<{
   margin: 0;
   color: var(--marketing-muted);
 }
+
+/* Mobile responsive for Contact */
+@media (max-width: 639px) {
+  .marketing-contact {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .marketing-contact__item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .marketing-contact__link {
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+
+  .marketing-contact__text {
+    font-size: 0.9rem;
+  }
+}
 </style>

@@ -18,6 +18,35 @@ const { currentLocale } = useMarketingRoute()
 const sectionLabel = computed(() => currentLocale.value === 'vi' ? 'Mở phần này' : 'Open section')
 </script>
 
+<style scoped>
+/* Mobile responsive for parts grid */
+@media (max-width: 639px) {
+  .marketing-card-grid--parts {
+    gap: 0.75rem;
+  }
+
+  .marketing-card--link {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .marketing-card--link .marketing-card__title {
+    font-size: 1rem;
+  }
+
+  .marketing-card--link .marketing-card__description {
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablet responsive */
+@media (min-width: 640px) and (max-width: 959px) {
+  .marketing-card-grid--parts {
+    gap: 0.875rem;
+  }
+}
+</style>
+
 <template>
   <LandingSection
     id="whats-inside"

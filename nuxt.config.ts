@@ -60,11 +60,11 @@ export default defineNuxtConfig({
   },
   llms: {
     domain: siteUrl || 'http://localhost:3000',
-    title: 'Carbon Credits Guide',
-    description: 'Comprehensive carbon credit documentation for Vietnamese SMEs',
+    title: 'Carbon Handbook',
+    description: 'Comprehensive carbon market documentation for Vietnamese SMEs',
     full: {
-      title: 'Carbon Credits Guide',
-      description: 'Comprehensive carbon credit documentation for Vietnamese SMEs',
+      title: 'Carbon Handbook for SMES',
+      description: 'Comprehensive carbon market documentation for Vietnamese SMEs',
     },
   },
   modules: [
@@ -73,7 +73,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/hints',
     '@nuxtjs/seo',
-    'nuxt-studio'
+    'nuxt-studio',
+    '@vercel/analytics'
   ],
   css: ['~/assets/css/main.css'],
   assistant: {

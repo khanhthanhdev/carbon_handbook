@@ -30,22 +30,6 @@ imageAlt: Bìa sổ tay tín chỉ carbon
 ---
 ::
 
-<!--::landing-trust-strip
----
-label: Được thực hiện cùng
-items:
-  - icon: i-lucide-building-2
-    name: VinUniversity
-    description: Chủ trì học thuật và điều phối biên tập
-  - icon: i-lucide-globe-2
-    name: British Council
-    description: Đồng hành quốc tế và hỗ trợ thể chế
-  - icon: i-lucide-notebook-tabs
-    name: Nhóm biên tập liên ngành
-    description: Kết nối góc nhìn chính sách, tài chính, quản trị và triển khai
----
-::-->
-
 ::landing-parts-grid
 ---
 eyebrow: Nội dung chính

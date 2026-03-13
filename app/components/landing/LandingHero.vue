@@ -23,6 +23,46 @@ const coverImage = computed(() => currentLocale.value === 'vi' ? '/cover_vi.webp
 const imageAlt = computed(() => props.imageAlt || props.title)
 </script>
 
+<style scoped>
+/* Mobile responsive styles for hero */
+@media (max-width: 767px) {
+  .marketing-hero__shell {
+    gap: 1.5rem;
+  }
+
+  .marketing-hero__visual {
+    display: none;
+  }
+
+  .marketing-hero__image {
+    width: min(100%, 14rem);
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(22, 34, 22, 0.12);
+  }
+
+  .marketing-hero__copy {
+    max-width: 100%;
+  }
+
+  .marketing-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .marketing-hero__actions .marketing-button {
+    width: 100%;
+  }
+}
+
+/* Tablet responsive */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .marketing-hero__image {
+    width: min(100%, 22rem);
+  }
+}
+</style>
+
 <template>
   <section
     ref="target"

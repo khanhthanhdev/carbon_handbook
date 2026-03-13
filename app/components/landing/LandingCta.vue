@@ -78,3 +78,42 @@ const footerNote = computed(() => localizeLabel(appConfig.marketing?.labels?.foo
     </div>
   </LandingSection>
 </template>
+
+<style scoped>
+/* Mobile responsive for CTA */
+@media (max-width: 639px) {
+  .marketing-cta {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .marketing-cta__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .marketing-cta__actions .marketing-button {
+    width: 100%;
+  }
+
+  .marketing-inline-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .marketing-inline-footer__links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 0.75rem;
+  }
+}
+
+/* Tablet responsive */
+@media (min-width: 640px) and (max-width: 959px) {
+  .marketing-cta {
+    padding: 1.5rem;
+  }
+}
+</style>

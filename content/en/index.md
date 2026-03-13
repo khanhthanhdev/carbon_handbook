@@ -30,22 +30,6 @@ imageAlt: Cover of the Carbon Credits Guide handbook
 ---
 ::
 
-<!--::landing-trust-strip
----
-label: Developed with
-items:
-  - icon: i-lucide-building-2
-    name: VinUniversity
-    description: Academic leadership and editorial coordination
-  - icon: i-lucide-globe-2
-    name: British Council
-    description: International collaboration and institutional support
-  - icon: i-lucide-notebook-tabs
-    name: Interdisciplinary editorial team
-    description: Policy, finance, governance, and implementation framing
----
-::-->
-
 ::landing-parts-grid
 ---
 eyebrow: What’s inside

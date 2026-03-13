@@ -274,8 +274,9 @@ body {
   flex-shrink: 0;
 }
 
-.marketing-header__locale--desktop,
-.marketing-header__cta--desktop {
+.marketing-header__locale.marketing-header__locale--desktop,
+.marketing-button.marketing-header__cta--desktop,
+.marketing-nav.marketing-nav--desktop {
   display: none;
 }
 
@@ -312,6 +313,9 @@ body {
   border-radius: 1.25rem;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 18px 44px rgba(20, 32, 21, 0.12);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .marketing-header__panel-actions {
@@ -342,7 +346,6 @@ body {
 }
 
 .marketing-nav--desktop {
-  display: flex;
   gap: 0.35rem;
   padding: 0.35rem;
   border-radius: 999px;
@@ -382,8 +385,21 @@ body {
   border-radius: 1rem;
 }
 
+/* Enhanced mobile navigation styles */
+@media (max-width: 1023px) {
+  .marketing-nav--mobile .marketing-nav__link {
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+
+  .marketing-nav--mobile .marketing-nav__link:hover,
+  .marketing-nav--mobile .marketing-nav__link--active {
+    background: rgba(71, 193, 99, 0.18);
+  }
+}
+
 @media (min-width: 768px) {
-  .marketing-header__locale--desktop {
+  .marketing-header__locale.marketing-header__locale--desktop {
     display: inline-flex;
   }
 }
@@ -832,8 +848,7 @@ body {
 .marketing-person__image {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
   background: #d9e5d9;
 }
 
@@ -1012,8 +1027,12 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .marketing-header__cta--desktop {
+  .marketing-button.marketing-header__cta--desktop {
     display: inline-flex;
+  }
+
+  .marketing-nav.marketing-nav--desktop {
+    display: flex;
   }
 }
 
@@ -1096,6 +1115,76 @@ body {
 
   .marketing-inline-footer__links {
     gap: 0.55rem 0.9rem;
+  }
+
+  /* Card grids responsive */
+  .marketing-card-grid,
+  .marketing-readiness,
+  .marketing-preview__people,
+  .marketing-preview__institutions,
+  .marketing-card-grid--parts {
+    grid-template-columns: 1fr;
+  }
+
+  /* Section title smaller on mobile */
+  .marketing-section__title {
+    font-size: 1.75rem;
+  }
+
+  /* Cards padding adjustment */
+  .marketing-card {
+    padding: 1rem;
+  }
+
+  /* Person card image adjustment */
+  .marketing-person__image {
+    height: auto;
+  }
+
+  /* Institution card full width */
+  .marketing-card--institution {
+    width: 100%;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .marketing-institution__image {
+    width: min(100%, 10rem);
+  }
+
+  /* Trust strip adjustments */
+  .marketing-trust__shell {
+    padding: 0.75rem;
+  }
+
+  .marketing-trust__icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .marketing-trust__name {
+    font-size: 0.95rem;
+  }
+
+  .marketing-trust__description {
+    font-size: 0.875rem;
+  }
+
+  /* CTA section */
+  .marketing-cta {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .marketing-cta__actions {
+    width: 100%;
+  }
+
+  /* Contact section */
+  .marketing-contact {
+    padding: 1rem;
+    width: 100%;
   }
 }
 
