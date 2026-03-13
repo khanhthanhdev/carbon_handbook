@@ -251,7 +251,7 @@ const alternateLocalePath = computed(() => {
 <style scoped>
 .about-page {
   position: relative;
-  padding: clamp(1.1rem, 2vw, 1.8rem) 0 4rem;
+  padding: clamp(8rem, 10vw, 10rem) 0 4rem;
   background:
     radial-gradient(circle at top left, rgba(243, 223, 154, 0.42), transparent 24rem),
     radial-gradient(circle at 88% 8%, rgba(190, 231, 234, 0.46), transparent 22rem),
