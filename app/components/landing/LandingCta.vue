@@ -19,10 +19,6 @@ const socialLinks = computed(() => [
     label: key,
     to: url as string,
   })),
-  ...(appConfig.github?.url ? [{
-    label: 'GitHub',
-    to: appConfig.github.url,
-  }] : []),
 ])
 
 const footerNote = computed(() => localizeLabel(appConfig.marketing?.labels?.footerNote, site.name))

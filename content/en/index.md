@@ -30,7 +30,7 @@ imageAlt: Cover of the Carbon Credits Guide handbook
 ---
 ::
 
-::landing-trust-strip
+<!--::landing-trust-strip
 ---
 label: Developed with
 items:
@@ -44,7 +44,7 @@ items:
     name: Interdisciplinary editorial team
     description: Policy, finance, governance, and implementation framing
 ---
-::
+::-->
 
 ::landing-parts-grid
 ---

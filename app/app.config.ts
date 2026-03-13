@@ -3,10 +3,22 @@ export default defineAppConfig({
     name: "Carbon Credits Guide",
     description:
       "Comprehensive carbon credit documentation for Vietnamese SMEs",
-    socials: {
-      github: "vinuni/carbon-docus",
-    },
+    socials: {},
+    github: false,
   },
+  modules: ['@nuxthq/studio'],
+  extends: ['docus'],
+  studio: {
+      // Enable/disable the studio module
+    enabled: true,
+    repository: {
+          provider: 'github', // 'github' or 'gitlab'
+          owner: 'khanhthanhdev',
+          repo: 'https://github.com/khanhthanhdev/carbon_handbook',
+          branch: 'main'
+    },
+    dev: true,
+    },
   sitemap: {
     enabled: true,
   },

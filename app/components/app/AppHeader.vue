@@ -12,16 +12,7 @@ const isScrolled = ref(false)
 
 const localeToggleLabel = computed(() => localizeLabel(appConfig.marketing?.labels?.switchLocale, currentLocale.value === 'vi' ? 'English' : 'Tiếng Việt'))
 
-const links = computed(() => appConfig.github && appConfig.github.url
-  ? [
-      {
-        icon: 'i-simple-icons-github',
-        to: appConfig.github.url,
-        target: '_blank',
-        'aria-label': 'GitHub',
-      },
-    ]
-  : [])
+const links = computed(() => [])
 
 function updateScrolled() {
   isScrolled.value = window.scrollY > (appConfig.marketing?.headerSolidOffset || 24)

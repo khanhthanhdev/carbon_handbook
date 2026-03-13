@@ -67,7 +67,14 @@ export default defineNuxtConfig({
       description: 'Comprehensive carbon credit documentation for Vietnamese SMEs',
     },
   },
-  modules: ['docus/modules/assistant', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxt/hints', '@nuxtjs/seo'],
+  modules: [
+    'docus/modules/assistant',
+    '@nuxtjs/i18n',
+    '@nuxt/fonts',
+    '@nuxt/hints',
+    '@nuxtjs/seo',
+    'nuxt-studio'
+  ],
   css: ['~/assets/css/main.css'],
   assistant: {
     mcpServer: '/mcp',
@@ -84,6 +91,15 @@ export default defineNuxtConfig({
       name: 'Tiếng Việt',
     }],
   },
+  studio: {
+    repository: {
+          provider: 'github', // 'github' or 'gitlab'
+          owner: 'khanhthanhdev',
+          repo: 'https://github.com/khanhthanhdev/carbon_handbook',
+          branch: 'main'
+    },
+    dev: true,
+    },
   mcp: {
     enabled: true,
   },

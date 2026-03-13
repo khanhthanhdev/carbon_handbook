@@ -30,7 +30,7 @@ imageAlt: Bìa sổ tay tín chỉ carbon
 ---
 ::
 
-::landing-trust-strip
+<!--::landing-trust-strip
 ---
 label: Được thực hiện cùng
 items:
@@ -44,12 +44,12 @@ items:
     name: Nhóm biên tập liên ngành
     description: Kết nối góc nhìn chính sách, tài chính, quản trị và triển khai
 ---
-::
+::-->
 
 ::landing-parts-grid
 ---
 eyebrow: Nội dung chính
-title: Toàn cảnh cấu trúc của sổ tay
+title: Tổng quan cấu trúc của sổ tay
 description: >-
   Xem nhanh sáu phần nội dung trọng tâm trước khi đi vào từng câu hỏi chi tiết.
 items:
@@ -91,7 +91,7 @@ items:
 eyebrow: Mức độ sẵn sàng của SME
 title: Biến nội dung thành năng lực hành động
 description: >-
-  Sổ tay được thiết kế để giúp doanh nghiệp chuyển từ mức độ nhận biết sang chuẩn bị có cấu trúc.
+   Sổ tay được thiết kế để chuyển từ mức độ nhận biết đến chuyên sâu
 items:
   - title: Hiểu rõ khái niệm, chính sách và thiết kế thị trường carbon
     description: Xây dựng nền tảng thực hành về tín chỉ carbon, ETS, tiêu chuẩn và bối cảnh chính sách tác động đến doanh nghiệp Việt Nam.
@@ -111,7 +111,7 @@ description: >-
   chính sách công và nghiên cứu phục vụ triển khai cho doanh nghiệp SME Việt Nam.
 primaryLabel: Xem đội ngũ thực hiện
 primaryTo: /vi/about-us
-supportTitle: Hỗ trợ thể chế
+supportTitle: Đơn vị thực hiện và tài trợ
 supportDescription: >-
   Dự án được đồng hành bởi các tổ chức đóng góp vai trò học thuật và hợp tác quốc tế.
 people:
