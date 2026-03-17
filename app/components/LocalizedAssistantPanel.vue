@@ -1,26 +1,41 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
-import type { UIMessage } from 'ai'
-import { Chat } from '@ai-sdk/vue'
-import { DefaultChatTransport } from 'ai'
-import { createReusableTemplate } from '@vueuse/core'
+import { defineAsyncComponent } from "vue";
+import type { UIMessage } from "ai";
+import { Chat } from "@ai-sdk/vue";
+import { DefaultChatTransport } from "ai";
+import { createReusableTemplate } from "@vueuse/core";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const components: Record<string, any> = {
-  pre: defineAsyncComponent(() => import('../../node_modules/docus/modules/assistant/runtime/components/AssistantPreStream.vue')),
-}
+  pre: defineAsyncComponent(
+    () =>
+      import("../../node_modules/docus/modules/assistant/runtime/components/AssistantPreStream.vue"),
+  ),
+};
 
-const LOCALIZED_ASSISTANT_API = '/api/assistant-localized'
-const [DefineChatContent, ReuseChatContent] = createReusableTemplate<{ showExpandButton?: boolean }>()
+const LOCALIZED_ASSISTANT_API = "/api/assistant-localized";
+const [DefineChatContent, ReuseChatContent] = createReusableTemplate<{
+  showExpandButton?: boolean;
+}>();
 
-const route = useRoute()
-const { isOpen, isExpanded, isMobile, panelWidth, toggleExpanded, messages, pendingMessage, clearPending, faqQuestions } = useAssistant()
-const toast = useToast()
-const { locale, t } = useDocusI18n()
-const input = ref('')
+const route = useRoute();
+const {
+  isOpen,
+  isExpanded,
+  isMobile,
+  panelWidth,
+  toggleExpanded,
+  messages,
+  pendingMessage,
+  clearPending,
+  faqQuestions,
+} = useAssistant();
+const toast = useToast();
+const { locale, t } = useDocusI18n();
+const input = ref("");
 
-const displayTitle = computed(() => t('assistant.title'))
-const displayPlaceholder = computed(() => t('assistant.placeholder'))
+const displayTitle = computed(() => t("assistant.title"));
+const displayPlaceholder = computed(() => t("assistant.placeholder"));
 
 const chat = new Chat({
   messages: messages.value,
@@ -34,104 +49,115 @@ const chat = new Chat({
   onError: (error: Error) => {
     const message = (() => {
       try {
-        const parsed = JSON.parse(error.message)
-        return parsed?.message || error.message
+        const parsed = JSON.parse(error.message);
+        return parsed?.message || error.message;
+      } catch {
+        return error.message;
       }
-      catch {
-        return error.message
-      }
-    })()
+    })();
 
     toast.add({
       description: message,
-      icon: 'i-lucide-alert-circle',
-      color: 'error',
+      icon: "i-lucide-alert-circle",
+      color: "error",
       duration: 0,
-    })
+    });
   },
   onFinish: () => {
-    messages.value = chat.messages
+    messages.value = chat.messages;
   },
-})
+});
 
-watch(pendingMessage, (message: string | undefined) => {
-  if (message) {
-    if (messages.value.length === 0 && chat.messages.length > 0) {
-      chat.messages.length = 0
+watch(
+  pendingMessage,
+  (message: string | undefined) => {
+    if (message) {
+      if (messages.value.length === 0 && chat.messages.length > 0) {
+        chat.messages.length = 0;
+      }
+      chat.sendMessage({
+        text: message,
+      });
+      clearPending();
     }
-    chat.sendMessage({
-      text: message,
-    })
-    clearPending()
-  }
-}, { immediate: true })
+  },
+  { immediate: true },
+);
 
-watch(messages, (newMessages: UIMessage[]) => {
-  if (newMessages.length === 0 && chat.messages.length > 0) {
-    chat.messages.length = 0
-  }
-}, { deep: true })
+watch(
+  messages,
+  (newMessages: UIMessage[]) => {
+    if (newMessages.length === 0 && chat.messages.length > 0) {
+      chat.messages.length = 0;
+    }
+  },
+  { deep: true },
+);
 
-const lastMessage = computed(() => chat.messages.at(-1))
-const showThinking = computed(() =>
-  chat.status === 'streaming'
-  && lastMessage.value?.role === 'assistant'
-  && !lastMessage.value?.parts?.some((p: { type: string }) => p.type === 'text'),
-)
+const lastMessage = computed(() => chat.messages.at(-1));
+const showThinking = computed(
+  () =>
+    chat.status === "streaming" &&
+    lastMessage.value?.role === "assistant" &&
+    !lastMessage.value?.parts?.some((p: { type: string }) => p.type === "text"),
+);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getMessageToolCalls(message: any) {
-  if (!message?.parts) return []
-  return message.parts
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .filter((p: any) => p.type === 'data-tool-calls')
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .flatMap((p: any) => p.data?.tools || [])
+  if (!message?.parts) return [];
+  return (
+    message.parts
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .filter((p: any) => p.type === "data-tool-calls")
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .flatMap((p: any) => p.data?.tools || [])
+  );
 }
 
 function handleSubmit(event?: Event) {
-  event?.preventDefault()
+  event?.preventDefault();
 
   if (!input.value.trim()) {
-    return
+    return;
   }
 
   chat.sendMessage({
     text: input.value,
-  })
+  });
 
-  input.value = ''
+  input.value = "";
 }
 
 function askQuestion(question: string) {
   chat.sendMessage({
     text: question,
-  })
+  });
 }
 
 function resetChat() {
-  chat.stop()
-  messages.value = []
-  chat.messages.length = 0
+  chat.stop();
+  messages.value = [];
+  chat.messages.length = 0;
 }
 
 onMounted(() => {
   if (pendingMessage.value) {
     chat.sendMessage({
       text: pendingMessage.value,
-    })
-    clearPending()
+    });
+    clearPending();
+  } else if (chat.lastMessage?.role === "user") {
+    chat.regenerate();
   }
-  else if (chat.lastMessage?.role === 'user') {
-    chat.regenerate()
-  }
-})
+});
 </script>
 
 <template>
   <DefineChatContent v-slot="{ showExpandButton = true }">
     <div class="flex h-full flex-col">
-      <div class="flex h-16 shrink-0 items-center justify-between border-b border-default px-4">
+      <div
+        class="flex h-16 shrink-0 items-center justify-between border-b border-default px-4"
+      >
         <span class="font-medium text-highlighted">{{ displayTitle }}</span>
         <div class="flex items-center gap-1">
           <UTooltip
@@ -174,7 +200,7 @@ onMounted(() => {
       </div>
 
       <div class="min-h-0 flex-1 overflow-y-auto">
-        <UChatMessages
+        <LazyUChatMessages
           v-if="chat.messages.length > 0"
           :messages="chat.messages"
           compact
@@ -185,8 +211,12 @@ onMounted(() => {
         >
           <template #content="{ message }">
             <div class="flex flex-col gap-2">
-              <AssistantLoading
-                v-if="message.role === 'assistant' && (getMessageToolCalls(message).length > 0 || (showThinking && message.id === lastMessage?.id))"
+              <LazyAssistantLoading
+                v-if="
+                  message.role === 'assistant' &&
+                  (getMessageToolCalls(message).length > 0 ||
+                    (showThinking && message.id === lastMessage?.id))
+                "
                 :tool-calls="getMessageToolCalls(message)"
                 :is-loading="showThinking && message.id === lastMessage?.id"
               />
@@ -194,7 +224,7 @@ onMounted(() => {
                 v-for="(part, index) in message.parts"
                 :key="`${message.id}-${part.type}-${index}${'state' in part ? `-${part.state}` : ''}`"
               >
-                <MDCCached
+                <LazyMDCCached
                   v-if="part.type === 'text' && part.text"
                   :value="part.text"
                   :cache-key="`${message.id}-${index}`"
@@ -205,33 +235,32 @@ onMounted(() => {
               </template>
             </div>
           </template>
-        </UChatMessages>
+        </LazyUChatMessages>
 
-        <div
-          v-else
-          class="p-4"
-        >
+        <div v-else class="p-4">
           <div
             v-if="!faqQuestions?.length"
             class="flex h-full flex-col items-center justify-center py-12 text-center"
           >
-            <div class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10">
+            <div
+              class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10"
+            >
               <UIcon
                 name="i-lucide-message-circle-question"
                 class="size-6 text-primary"
               />
             </div>
             <h3 class="mb-2 text-base font-medium text-highlighted">
-              {{ t('assistant.askMeAnything') }}
+              {{ t("assistant.askMeAnything") }}
             </h3>
             <p class="max-w-xs text-sm text-muted">
-              {{ t('assistant.askMeAnythingDescription') }}
+              {{ t("assistant.askMeAnythingDescription") }}
             </p>
           </div>
 
           <template v-else>
             <p class="mb-4 text-sm font-medium text-muted">
-              {{ t('assistant.faq') }}
+              {{ t("assistant.faq") }}
             </p>
 
             <div class="flex flex-col gap-5">
@@ -240,7 +269,9 @@ onMounted(() => {
                 :key="category.category"
                 class="flex flex-col gap-1.5"
               >
-                <h4 class="text-xs font-medium uppercase tracking-wide text-dimmed">
+                <h4
+                  class="text-xs font-medium uppercase tracking-wide text-dimmed"
+                >
                   {{ category.category }}
                 </h4>
                 <div class="flex flex-col">
@@ -273,15 +304,9 @@ onMounted(() => {
         >
           <template #footer>
             <div class="flex items-center gap-1 text-xs text-muted">
-              <span>{{ t('assistant.lineBreak') }}</span>
-              <UKbd
-                size="sm"
-                value="shift"
-              />
-              <UKbd
-                size="sm"
-                value="enter"
-              />
+              <span>{{ t("assistant.lineBreak") }}</span>
+              <UKbd size="sm" value="shift" />
+              <UKbd size="sm" value="enter" />
             </div>
             <UChatPromptSubmit
               class="ml-auto"
@@ -293,10 +318,8 @@ onMounted(() => {
           </template>
         </UChatPrompt>
         <div class="mt-1 flex text-xs text-dimmed items-center justify-between">
-          <span>{{ t('assistant.chatCleared') }}</span>
-          <span>
-            {{ input.length }}/1000
-          </span>
+          <span>{{ t("assistant.chatCleared") }}</span>
+          <span> {{ input.length }}/1000 </span>
         </div>
       </div>
     </div>
@@ -318,7 +341,7 @@ onMounted(() => {
     </div>
   </aside>
 
-  <USlideover
+  <LazyUSlideover
     v-else
     v-model:open="isOpen"
     side="right"
@@ -329,5 +352,5 @@ onMounted(() => {
     <template #content>
       <ReuseChatContent :show-expand-button="false" />
     </template>
-  </USlideover>
+  </LazyUSlideover>
 </template>

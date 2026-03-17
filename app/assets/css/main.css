@@ -848,7 +848,8 @@ body {
 .marketing-person__image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 24rem;
+  object-fit: cover;
   background: #d9e5d9;
 }
 

@@ -69,7 +69,7 @@ provide('navigation', navigation)
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
-      <AppFooter v-if="$route.meta.footer !== false" />
+      <LazyAppFooter v-if="$route.meta.footer !== false" />
     </div>
 
     <ClientOnly>

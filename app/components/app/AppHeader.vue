@@ -1,60 +1,79 @@
 <script setup lang="ts">
-const appConfig = useAppConfig()
-const site = useSiteConfig()
-const route = useRoute()
+const appConfig = useAppConfig();
+const site = useSiteConfig();
+const route = useRoute();
 
-const { isEnabled: isAssistantEnabled } = useAssistant()
-const { localePath, isEnabled, locales } = useDocusI18n()
-const { currentLocale, homePath, alternateLocalePath, isMarketingRoute, localizeLabel } = useMarketingRoute()
+const { isEnabled: isAssistantEnabled } = useAssistant();
+const { localePath, isEnabled, locales } = useDocusI18n();
+const {
+  currentLocale,
+  homePath,
+  alternateLocalePath,
+  isMarketingRoute,
+  localizeLabel,
+} = useMarketingRoute();
 
-const isMenuOpen = ref(false)
-const isScrolled = ref(false)
+const isMenuOpen = ref(false);
+const isScrolled = ref(false);
 
-const localeToggleLabel = computed(() => localizeLabel(appConfig.marketing?.labels?.switchLocale, currentLocale.value === 'vi' ? 'English' : 'Tiếng Việt'))
+const localeToggleLabel = computed(() =>
+  localizeLabel(
+    appConfig.marketing?.labels?.switchLocale,
+    currentLocale.value === "vi" ? "English" : "Tiếng Việt",
+  ),
+);
 
-const links = computed(() => [])
+const links = computed(() => []);
 
 function updateScrolled() {
-  isScrolled.value = window.scrollY > (appConfig.marketing?.headerSolidOffset || 24)
+  isScrolled.value =
+    window.scrollY > (appConfig.marketing?.headerSolidOffset || 24);
 }
 
 function stopTracking() {
   if (!import.meta.client) {
-    return
+    return;
   }
 
-  window.removeEventListener('scroll', updateScrolled)
-  isScrolled.value = false
+  window.removeEventListener("scroll", updateScrolled);
+  isScrolled.value = false;
 }
 
 function startTracking() {
   if (!import.meta.client) {
-    return
+    return;
   }
 
-  stopTracking()
-  updateScrolled()
-  window.addEventListener('scroll', updateScrolled, { passive: true })
+  stopTracking();
+  updateScrolled();
+  window.addEventListener("scroll", updateScrolled, { passive: true });
 }
 
-watch(() => isMarketingRoute.value, (value) => {
-  if (!import.meta.client) {
-    return
-  }
+watch(
+  () => isMarketingRoute.value,
+  (value) => {
+    if (!import.meta.client) {
+      return;
+    }
 
-  if (value) {
-    startTracking()
-    return
-  }
+    if (value) {
+      startTracking();
+      return;
+    }
 
-  stopTracking()
-}, { immediate: true })
+    stopTracking();
+  },
+  { immediate: true },
+);
 
-watch(() => route.path, () => {
-  isMenuOpen.value = false
-})
+watch(
+  () => route.path,
+  () => {
+    isMenuOpen.value = false;
+  },
+);
 
-onBeforeUnmount(stopTracking)
+onBeforeUnmount(stopTracking);
 </script>
 
 <template>
@@ -65,10 +84,7 @@ onBeforeUnmount(stopTracking)
   >
     <div class="marketing-shell">
       <div class="marketing-header__bar">
-        <NuxtLink
-          :to="homePath"
-          class="marketing-header__brand"
-        >
+        <NuxtLink :to="homePath" class="marketing-header__brand">
           <AppHeaderLogo class="marketing-header__logo" />
         </NuxtLink>
 
@@ -82,7 +98,9 @@ onBeforeUnmount(stopTracking)
             {{ localeToggleLabel }}
           </NuxtLink>
 
-          <AppHeaderCTA class="marketing-header__cta marketing-header__cta--desktop" />
+          <AppHeaderCTA
+            class="marketing-header__cta marketing-header__cta--desktop"
+          />
 
           <UButton
             color="neutral"
@@ -103,10 +121,7 @@ onBeforeUnmount(stopTracking)
           id="marketing-mobile-nav"
           class="marketing-header__panel lg:hidden"
         >
-          <AppHeaderCenter
-            mobile
-            @navigate="isMenuOpen = false"
-          />
+          <AppHeaderCenter mobile @navigate="isMenuOpen = false" />
 
           <div class="marketing-header__panel-actions">
             <NuxtLink
@@ -117,17 +132,14 @@ onBeforeUnmount(stopTracking)
               {{ localeToggleLabel }}
             </NuxtLink>
 
-            <AppHeaderCTA
-              mobile
-              @click="isMenuOpen = false"
-            />
+            <AppHeaderCTA mobile @click="isMenuOpen = false" />
           </div>
         </div>
       </Transition>
     </div>
   </header>
 
-  <UHeader
+  <LazyUHeader
     v-else
     :ui="{ center: 'flex-1' }"
     :to="localePath('/')"
@@ -143,31 +155,32 @@ onBeforeUnmount(stopTracking)
       <AppHeaderCTA />
 
       <template v-if="isAssistantEnabled">
-        <AssistantChat />
+        <LazyAssistantChat />
       </template>
 
       <template v-if="isEnabled && locales.length > 1">
         <ClientOnly>
-          <LanguageSelect />
+          <LazyLanguageSelect />
 
           <template #fallback>
-            <div class="h-8 w-8 animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-800" />
+            <div
+              class="h-8 w-8 animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-800"
+            />
           </template>
         </ClientOnly>
 
-        <USeparator
-          orientation="vertical"
-          class="h-8"
-        />
+        <LazyUSeparator orientation="vertical" class="h-8" />
       </template>
 
-      <UContentSearchButton class="lg:hidden" />
+      <LazyUContentSearchButton class="lg:hidden" />
 
       <ClientOnly>
-        <UColorModeButton />
+        <LazyUColorModeButton />
 
         <template #fallback>
-          <div class="h-8 w-8 animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-800" />
+          <div
+            class="h-8 w-8 animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-800"
+          />
         </template>
       </ClientOnly>
 
@@ -181,15 +194,11 @@ onBeforeUnmount(stopTracking)
     </template>
 
     <template #toggle="{ open, toggle }">
-      <IconMenuToggle
-        :open="open"
-        class="lg:hidden"
-        @click="toggle"
-      />
+      <LazyIconMenuToggle :open="open" class="lg:hidden" @click="toggle" />
     </template>
 
     <template #body>
-      <AppHeaderBody />
+      <LazyAppHeaderBody />
     </template>
-  </UHeader>
+  </LazyUHeader>
 </template>

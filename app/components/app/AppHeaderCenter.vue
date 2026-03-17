@@ -1,24 +1,25 @@
 <script setup lang="ts">
 defineProps<{
-  mobile?: boolean
-}>()
+  mobile?: boolean;
+}>();
 
 defineEmits<{
-  navigate: []
-}>()
+  navigate: [];
+}>();
 
-const { isMarketingRoute, isLandingRoute, isAboutRoute, navItems } = useMarketingRoute()
+const { isMarketingRoute, isLandingRoute, isAboutRoute, navItems } =
+  useMarketingRoute();
 
 function isActive(id: string) {
-  if (id === 'about') {
-    return isAboutRoute.value
+  if (id === "about") {
+    return isAboutRoute.value;
   }
 
-  if (id === 'whats-inside') {
-    return isLandingRoute.value
+  if (id === "whats-inside") {
+    return isLandingRoute.value;
   }
 
-  return false
+  return false;
 }
 </script>
 
@@ -44,7 +45,7 @@ function isActive(id: string) {
     </NuxtLink>
   </nav>
 
-  <UContentSearchButton
+  <LazyUContentSearchButton
     v-else
     :collapsed="false"
     class="w-full"
