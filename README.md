@@ -1,6 +1,6 @@
-# Carbon Credits Guide
+# Carbon Market Handbook
 
-Carbon Credits Guide is a bilingual Docus site for Vietnamese SMEs. It covers carbon-credit fundamentals, Vietnamese policy, emissions accounting, project implementation, finance, governance, and international case studies in both English and Vietnamese.
+Carbon Market Handbook is a bilingual Docus site for Vietnamese SMEs. It covers carbon-credit fundamentals, Vietnamese policy, emissions accounting, project implementation, finance, governance, and international case studies in both English and Vietnamese.
 
 ## Features
 

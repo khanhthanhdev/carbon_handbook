@@ -1,13 +1,32 @@
 ---
 seo:
-  title: Carbon Credits Guide for Vietnamese SMEs
-  description: A comprehensive handbook on carbon credits for Vietnamese SMEs, covering legal context, measurement, project development, finance, governance, and international practice.
+  title: Carbon Market Handbook for Vietnamese SMEs | Carbon Market Handbook 2026
+  description: Complete carbon market guide for Vietnam SMEs. Learn about carbon credits, MRV, emissions trading, green finance, and net zero pathways. Expert resources for Vietnamese businesses.
+  keywords:
+    - carbon credits Vietnam
+    - carbon market for SMEs
+    - greenhouse gas accounting
+    - MRV system Vietnam
+    - emission reduction projects
+    - green finance Vietnam
+    - Vietnam ETS
+    - carbon pricing
+    - net zero Vietnam 2050
+  robots: index, follow
+  sitemap:
+    changefreq: daily
+    priority: 1.0
+  ogImage:
+    component: OgImageTemplate
+    props:
+      title: Carbon Market Handbook
+      description: For Vietnamese SMEs
 ---
 
 ::landing-hero
 ---
 eyebrow: Carbon Market Handbook
-title: Carbon Credits Guide for Vietnamese SMEs
+title: Carbon Market Handbook for Vietnamese SMEs
 lead: >-
   A localized handbook built to help Vietnamese SMEs understand carbon credits,
   legal context, and the practical steps required to prepare for carbon market participation.
@@ -26,7 +45,7 @@ statLabel: Editorial scope
 statValue: 6 handbook parts
 statDescription: >-
   Organized as a practical sequence from market fundamentals to implementation readiness.
-imageAlt: Cover of the Carbon Credits Guide handbook
+imageAlt: Cover of the Carbon Market Handbook
 ---
 ::
 
@@ -91,7 +110,7 @@ items:
 eyebrow: Behind the book
 title: The three main creators behind the handbook
 description: >-
-  The Carbon Credits Guide is shaped by a core editorial group connecting economics,
+  The Carbon Market Handbook is shaped by a core editorial group connecting economics,
   public policy, and implementation-focused research for Vietnamese SMEs.
 primaryLabel: Meet the full team
 primaryTo: /en/about-us

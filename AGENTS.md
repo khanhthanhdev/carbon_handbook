@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a Nuxt 4 + Docus documentation site for the Carbon Credits Guide. Keep app code in `app/`, content in `content/`, server handlers in `server/`, and static files in `public/`.
+This repository is a Nuxt 4 + Docus documentation site for the Carbon Market Handbook. Keep app code in `app/`, content in `content/`, server handlers in `server/`, and static files in `public/`.
 
 - `app/components/`: Vue UI components such as `AboutUsPage.vue` and assistant overrides.
 - `app/pages/`: route entries, including localized pages.

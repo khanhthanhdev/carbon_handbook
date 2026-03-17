@@ -1,13 +1,32 @@
 ---
 seo:
-  title: Sổ tay Tín chỉ Carbon cho Doanh nghiệp SME Việt Nam
-  description: Sổ tay thị trường carbon dành cho doanh nghiệp SME Việt Nam, bao quát khung pháp lý, đo lường phát thải, dự án giảm phát thải, tài chính, quản trị và kinh nghiệm quốc tế.
+  title: Sổ tay Thị trường Carbon cho Doanh nghiệp SME Việt Nam | Thị trường Carbon 2026
+  description: Sổ tay thị trường carbon toàn diện cho doanh nghiệp SME Việt Nam. Hướng dẫn tín chỉ carbon, MRV, giao dịch phát thải, tài chính xanh và lộ trình net zero.
+  keywords:
+    - tín chỉ carbon Việt Nam
+    - thị trường carbon SME
+    - kiểm kê khí nhà kính
+    - hệ thống MRV
+    - dự án giảm phát thải
+    - tài chính xanh Việt Nam
+    - ETS Việt Nam
+    - giá carbon
+    - net zero 2050
+  robots: index, follow
+  sitemap:
+    changefreq: daily
+    priority: 1.0
+  ogImage:
+    component: OgImageTemplate
+    props:
+      title: Sổ tay Thị trường Carbon
+      description: Dành cho SME Việt Nam
 ---
 
 ::landing-hero
 ---
 eyebrow: Sổ tay Thị trường Carbon
-title: Sổ tay Tín chỉ Carbon cho Doanh nghiệp SME Việt Nam
+title: Sổ tay Thị trường Carbon cho Doanh nghiệp SME Việt Nam
 lead: >-
   Một sổ tay được xây dựng để giúp doanh nghiệp SME Việt Nam hiểu tín chỉ carbon,
   khung pháp lý và các bước thực hành cần thiết để chuẩn bị tham gia thị trường.
@@ -26,7 +45,7 @@ statLabel: Cấu trúc biên soạn
 statValue: 6 phần sổ tay
 statDescription: >-
   Được tổ chức như một lộ trình thực hành, từ nền tảng thị trường đến mức độ sẵn sàng triển khai.
-imageAlt: Bìa sổ tay tín chỉ carbon
+imageAlt: Bìa sổ tay thị trường carbon
 ---
 ::
 
@@ -91,7 +110,7 @@ items:
 eyebrow: Đằng sau cuốn sách
 title: Ba tác giả chính thực hiện sổ tay
 description: >-
-  Sổ tay Tín chỉ Carbon được dẫn dắt bởi nhóm biên tập nòng cốt, kết nối kinh tế,
+  Sổ tay Thị trường Carbon được dẫn dắt bởi nhóm biên tập nòng cốt, kết nối kinh tế,
   chính sách công và nghiên cứu phục vụ triển khai cho doanh nghiệp SME Việt Nam.
 primaryLabel: Xem đội ngũ thực hiện
 primaryTo: /vi/about-us

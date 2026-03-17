@@ -1,10 +1,23 @@
 export default defineAppConfig({
+  seo: {
+    titleTemplate: '%s - Carbon Market Handbook',
+    title: 'Carbon Market Handbook for Vietnamese SMEs',
+    description: 'Comprehensive carbon market handbook for Vietnam SMEs - carbon credits, MRV, green finance, emissions trading',
+    ogImage: {
+      component: 'OgImageTemplate',
+      props: {
+        title: 'Carbon Market Handbook',
+        description: 'For Vietnamese SMEs',
+      },
+    },
+  },
   docus: {
-    name: "Carbon Credits Guide",
-    description:
-      "Comprehensive carbon credit documentation for Vietnamese SMEs",
-    socials: {},
-    github: false,
+    name: "Carbon Market Handbook",
+    description: "Comprehensive carbon market documentation for Vietnamese SMEs",
+    url: "https://carbonmarketvietnam.com",
+    socials: {
+      github: false
+    },
   },
   modules: ['@nuxthq/studio'],
   extends: ['docus'],
@@ -19,9 +32,6 @@ export default defineAppConfig({
     },
     dev: true,
     },
-  sitemap: {
-    enabled: true,
-  },
   marketing: {
     headerSolidOffset: 24,
     handbookPaths: {

@@ -1,6 +1,6 @@
 <template>
   <img
     src="/logo.webp"
-    alt="Carbon Credits Guide"
+    alt="Carbon Market Handbook"
   >
 </template>

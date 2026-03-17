@@ -33,13 +33,15 @@ function loadLocalEnv(fileName: string) {
 loadLocalEnv('.env')
 loadLocalEnv('.env.local')
 
-const siteUrl = process.env.NUXT_SITE_URL
+const siteUrl = process.env.NUXT_SITE_URL || 'http://localhost:3000'
 
 export default defineNuxtConfig({
   extends: ['docus'],
   site: {
-    name: 'Carbon Credits Guide',
-    ...(siteUrl ? { url: siteUrl } : {}),
+    name: 'Carbon Market Handbook for Vietnamese SMEs',
+    description: 'Comprehensive carbon market handbook for Vietnam SMEs - carbon credits, MRV, green finance, emissions trading, and net zero pathways',
+    url: siteUrl,
+    defaultLocale: 'en',
   },
   fonts: {
     defaults: {
@@ -59,12 +61,35 @@ export default defineNuxtConfig({
     fallbackToApi: false,
   },
   llms: {
-    domain: siteUrl || 'http://localhost:3000',
-    title: 'Carbon Handbook',
+    domain: siteUrl,
+    title: 'Carbon Market Handbook',
     description: 'Comprehensive carbon market documentation for Vietnamese SMEs',
     full: {
-      title: 'Carbon Handbook for SMES',
+      title: 'Carbon Market Handbook for SMES',
       description: 'Comprehensive carbon market documentation for Vietnamese SMEs',
+    },
+  },
+  sitemap: {
+    enabled: true,
+    cacheMaxAgeSeconds: 3600,
+    defaultSitemapsChunkSize: 1000,
+  },
+  robots: {
+    groups: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/_studio', '/api'],
+      },
+    ],
+  },
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'Carbon Market Handbook',
+      url: siteUrl,
+      logo: '/logo.png',
+      sameAs: [],
     },
   },
   modules: [
