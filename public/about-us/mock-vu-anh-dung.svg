@@ -1,16 +1,1 @@
-<svg width="640" height="768" viewBox="0 0 640 768" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg-vu-anh-dung" x1="98" y1="40" x2="558" y2="730" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#EAF1E7"/>
-      <stop offset="1" stop-color="#D8E1D7"/>
-    </linearGradient>
-  </defs>
-  <rect width="640" height="768" rx="56" fill="url(#bg-vu-anh-dung)"/>
-  <rect x="112" y="132" width="416" height="336" rx="168" fill="#F8FBF7"/>
-  <circle cx="320" cy="246" r="56" fill="#758E7B"/>
-  <path d="M200 402C200 336.83 252.83 284 318 284H322C387.17 284 440 336.83 440 402V428H200V402Z" fill="#758E7B"/>
-  <path d="M134 566C134 552.745 144.745 542 158 542H482C495.255 542 506 552.745 506 566V566C506 579.255 495.255 590 482 590H158C144.745 590 134 579.255 134 566V566Z" fill="#E7EEE7"/>
-  <text x="320" y="536" text-anchor="middle" fill="#173F2B" font-family="Arial, sans-serif" font-size="54" font-weight="700">VD</text>
-  <text x="320" y="644" text-anchor="middle" fill="#173F2B" font-family="Arial, sans-serif" font-size="34" font-weight="700">Vu Anh Dung</text>
-  <text x="320" y="688" text-anchor="middle" fill="#557260" font-family="Arial, sans-serif" font-size="22">Mockup portrait</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="768" fill="none" viewBox="0 0 640 768"><defs><linearGradient id="bg-vu-anh-dung" x1="98" x2="558" y1="40" y2="730" gradientUnits="userSpaceOnUse"><stop stop-color="#EAF1E7"/><stop offset="1" stop-color="#D8E1D7"/></linearGradient></defs><rect width="640" height="768" fill="url(#bg-vu-anh-dung)" rx="56"/><rect width="416" height="336" x="112" y="132" fill="#F8FBF7" rx="168"/><circle cx="320" cy="246" r="56" fill="#758E7B"/><path fill="#758E7B" d="M200 402C200 336.83 252.83 284 318 284H322C387.17 284 440 336.83 440 402V428H200V402Z"/><path fill="#E7EEE7" d="M134 566C134 552.745 144.745 542 158 542H482C495.255 542 506 552.745 506 566V566C506 579.255 495.255 590 482 590H158C144.745 590 134 579.255 134 566V566Z"/><text x="320" y="536" fill="#173F2B" font-family="Arial, sans-serif" font-size="54" font-weight="700" text-anchor="middle">VD</text><text x="320" y="644" fill="#173F2B" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">Vu Anh Dung</text><text x="320" y="688" fill="#557260" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">Mockup portrait</text></svg>
