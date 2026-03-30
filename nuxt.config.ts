@@ -104,7 +104,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   assistant: {
     mcpServer: '/mcp',
-    model: 'alibaba/qwen-3-32b',
+    model: 'google/gemini-2.5-flash-lite',
   },
   i18n: {
     defaultLocale: 'en',
