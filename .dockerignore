@@ -1,0 +1,16 @@
+.git
+.claude
+.data
+.nuxt
+.output
+dist
+node_modules
+output
+plans
+logs
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+!.env.production.example

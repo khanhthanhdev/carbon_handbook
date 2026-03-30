@@ -63,3 +63,65 @@ Each locale contains six sections covering concepts, implementation, finance, su
 ```bash
 bun run build
 ```
+
+## Docker Deployment
+
+The repository includes a production `Dockerfile`, a `compose.yml` stack, and a Caddy reverse proxy for simple VPS deployments with automatic HTTPS.
+
+### Files
+
+- `Dockerfile`: multi-stage build for the Nuxt/Nitro server output
+- `compose.yml`: app + Caddy services
+- `deploy/Caddyfile`: reverse proxy from Caddy to the Nitro app
+- `.env.production.example`: production environment template
+
+### Prepare Production Env
+
+```bash
+cp .env.production.example .env.production
+```
+
+Set these values in `.env.production`:
+
+- `DOMAIN`: the public hostname pointed at your VPS, for example `docs.example.com`
+- `NUXT_SITE_URL`: the final public URL, for example `https://docs.example.com`
+- `AI_GATEWAY_API_KEY`: optional, but required if you want the assistant enabled
+- `STUDIO_GITHUB_CLIENT_ID` and `STUDIO_GITHUB_CLIENT_SECRET`: optional, only for Nuxt Studio in production
+
+`NUXT_SITE_URL` and the assistant-related env vars are consumed during the Nuxt build, so deploy with `docker compose --env-file .env.production ...` rather than setting them only after the image is built.
+
+### Deploy On A VPS
+
+1. Install Docker Engine and the Docker Compose plugin on the VPS.
+2. Point your domain’s DNS `A` or `AAAA` record to the VPS.
+3. Open inbound ports `80` and `443` in the VPS firewall or cloud security group.
+4. Copy the project to the server.
+5. Start the stack:
+
+```bash
+docker compose --env-file .env.production up -d --build
+```
+
+6. Check status and logs:
+
+```bash
+docker compose ps
+docker compose logs -f app
+docker compose logs -f caddy
+```
+
+Caddy will obtain and renew TLS certificates automatically once the domain resolves to the VPS and ports `80` and `443` are reachable.
+
+### Updating The Deployment
+
+After pulling new code on the VPS:
+
+```bash
+docker compose --env-file .env.production up -d --build
+```
+
+If you change only Caddy config:
+
+```bash
+docker compose restart caddy
+```
