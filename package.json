@@ -15,6 +15,7 @@
     "@nuxtjs/i18n": "^10.2.1",
     "@nuxtjs/seo": "3.4.0",
     "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "better-sqlite3": "^12.6.2",
     "docus": "latest",
     "nuxt": "^4.3.1",

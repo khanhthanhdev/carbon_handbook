@@ -99,7 +99,8 @@ export default defineNuxtConfig({
     '@nuxt/hints',
     '@nuxtjs/seo',
     'nuxt-studio',
-    '@vercel/analytics'
+    '@vercel/analytics',
+    '@vercel/speed-insights',
   ],
   css: ['~/assets/css/main.css'],
   assistant: {
