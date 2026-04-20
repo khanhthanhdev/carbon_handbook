@@ -1,8 +1,1 @@
-<svg width="720" height="320" viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="320" rx="40" fill="#EFF4EE"/>
-  <rect x="44" y="44" width="632" height="232" rx="28" fill="#FFFFFF" stroke="#D8E4D8"/>
-  <circle cx="144" cy="160" r="52" fill="#DCE8DD"/>
-  <text x="144" y="174" text-anchor="middle" fill="#173F2B" font-family="Arial, sans-serif" font-size="34" font-weight="700">VU</text>
-  <text x="264" y="150" fill="#173F2B" font-family="Arial, sans-serif" font-size="38" font-weight="700">VinUniversity</text>
-  <text x="264" y="194" fill="#5A6C5D" font-family="Arial, sans-serif" font-size="22">Mockup logo</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" fill="none" viewBox="0 0 720 320"><rect width="720" height="320" fill="#EFF4EE" rx="40"/><rect width="632" height="232" x="44" y="44" fill="#FFF" stroke="#D8E4D8" rx="28"/><circle cx="144" cy="160" r="52" fill="#DCE8DD"/><text x="144" y="174" fill="#173F2B" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">VU</text><text x="264" y="150" fill="#173F2B" font-family="Arial, sans-serif" font-size="38" font-weight="700">VinUniversity</text><text x="264" y="194" fill="#5A6C5D" font-family="Arial, sans-serif" font-size="22">Mockup logo</text></svg>
